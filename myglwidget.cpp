@@ -163,8 +163,6 @@ void MyGLWidget::draw()
         glEnd();
     }
 
-
-    qglColor(Qt::red);
     glBegin(GL_POLYGON);
         glNormal3f(0, 0, 1);
         for (const Point& p : header) {
@@ -178,5 +176,5 @@ void MyGLWidget::draw()
             VERTEX(p);
         }
     glEnd();
-
+    qglColor(Qt::red);
 }
