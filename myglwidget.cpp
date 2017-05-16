@@ -70,7 +70,6 @@ void MyGLWidget::initializeGL()
     qglClearColor(Qt::black);
 
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
     glShadeModel(GL_SMOOTH);
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
