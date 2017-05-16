@@ -17,6 +17,50 @@ MyGLWidget::~MyGLWidget()
 {
 }
 
+void MyGLWidget::setTopRadius(double r)
+{
+    this->r2 = r;
+    updateGL();
+}
+
+void MyGLWidget::setBottomRadius(double r)
+{
+    this->r1 = r;
+    updateGL();
+}
+
+void MyGLWidget::setN(int n)
+{
+    this->n = n;
+    updateGL();
+}
+
+void MyGLWidget::setHeight(double h)
+{
+    this->h = h;
+    updateGL();
+}
+
+double MyGLWidget::getTopRaius() const
+{
+    return r2;
+}
+
+double MyGLWidget::getBottomRadius() const
+{
+    return r1;
+}
+
+int MyGLWidget::getN() const
+{
+    return n;
+}
+
+double MyGLWidget::getHeight() const
+{
+    return h;
+}
+
 QSize MyGLWidget::minimumSizeHint() const
 {
     return QSize(50, 50);
@@ -127,11 +171,6 @@ struct Point {
 
 void MyGLWidget::draw()
 {
-    double r1 = 1;
-    double r2 = 0.5;
-    int n = 5;
-    double h = 1;
-
     QVector<Point> base, header;
 #define ANGLE(x) 2 * M_PI * (x) / n
 #define POINT(x, r, z) { \

@@ -11,6 +11,18 @@ class MyGLWidget : public QGLWidget
 public:
     explicit MyGLWidget(QWidget *parent = 0);
     ~MyGLWidget();
+
+    void setTopRadius(double r);
+    double getTopRaius() const;
+
+    void setBottomRadius(double r);
+    double getBottomRadius() const;
+
+    void setHeight(double h);
+    double getHeight() const;
+
+    void setN(int n);
+    int getN() const;
 signals:
 
 public slots:
@@ -26,13 +38,11 @@ protected:
     void mouseMoveEvent(QMouseEvent *event);
 
 public slots:
-    // slots for xyz-rotation slider
     void setXRotation(int angle);
     void setYRotation(int angle);
     void setZRotation(int angle);
 
 signals:
-    // signaling rotation from mouse movement
     void xRotationChanged(int angle);
     void yRotationChanged(int angle);
     void zRotationChanged(int angle);
@@ -43,6 +53,11 @@ private:
     int xRot;
     int yRot;
     int zRot;
+
+    double r1 = 1;
+    double r2 = 0.5;
+    double h = 1;
+    int n = 5;
 
     QPoint lastPos;
 };
