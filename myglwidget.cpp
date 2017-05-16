@@ -171,7 +171,7 @@ void MyGLWidget::draw()
     glEnd();
 
     glBegin(GL_POLYGON);
-        glNormal3f(0, 0, 1);
+        glNormal3f(0, 0, -1);
         for (const Point& p : base) {
             VERTEX(p);
         }
