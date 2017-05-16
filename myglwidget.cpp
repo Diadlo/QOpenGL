@@ -74,12 +74,9 @@ void MyGLWidget::initializeGL()
     glShadeModel(GL_SMOOTH);
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
-    glEnable(GL_LIGHT1);
 
     static GLfloat lightPosition[4] = { 1, 1, 1, 0 };
     glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
-    static GLfloat lightPosition2[4] = { -1, -1, -1, 0 };
-    glLightfv(GL_LIGHT1, GL_POSITION, lightPosition2);
 }
 
 void MyGLWidget::paintGL()
