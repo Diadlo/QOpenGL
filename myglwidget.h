@@ -23,6 +23,9 @@ public:
 
     void setN(int n);
     int getN() const;
+
+    void setTransparent(bool val);
+    bool getTransparent() const;
 signals:
 
 public slots:
@@ -58,6 +61,7 @@ private:
     double r2 = 0.5;
     double h = 1;
     int n = 5;
+    bool transp = false;
 
     QPoint lastPos;
 };

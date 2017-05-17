@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include <QSpinBox>
+#include <QCheckBox>
 #include <QDoubleSpinBox>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -13,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinTop->setValue(ui->opengl->getTopRaius());
     ui->spinBase->setValue(ui->opengl->getBottomRadius());
     ui->spinHeight->setValue(ui->opengl->getHeight());
+    ui->cbTransparent->setChecked(ui->opengl->getTransparent());
 }
 
 MainWindow::~MainWindow()
@@ -38,4 +40,9 @@ void MainWindow::on_spinBase_valueChanged(double val)
 void MainWindow::on_spinHeight_valueChanged(double val)
 {
     ui->opengl->setHeight(val);
+}
+
+void MainWindow::on_cbTransparent_clicked(bool checked)
+{
+    ui->opengl->setTransparent(checked);
 }

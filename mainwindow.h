@@ -21,6 +21,8 @@ private slots:
     void on_spinBase_valueChanged(double val);
     void on_spinHeight_valueChanged(double val);
 
+    void on_cbTransparent_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };

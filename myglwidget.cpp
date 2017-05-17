@@ -1,5 +1,3 @@
-// myglwidget.cpp
-
 #include <QtWidgets>
 #include <QtOpenGL>
 
@@ -41,6 +39,12 @@ void MyGLWidget::setHeight(double h)
     updateGL();
 }
 
+void MyGLWidget::setTransparent(bool val)
+{
+    transp = val;
+    updateGL();
+}
+
 double MyGLWidget::getTopRaius() const
 {
     return r2;
@@ -54,6 +58,11 @@ double MyGLWidget::getBottomRadius() const
 int MyGLWidget::getN() const
 {
     return n;
+}
+
+bool MyGLWidget::getTransparent() const
+{
+    return transp;
 }
 
 double MyGLWidget::getHeight() const
@@ -171,6 +180,9 @@ struct Point {
 
 void MyGLWidget::draw()
 {
+    void (*f)(GLenum cap) = transp ? glDisable : glEnable;
+    f(GL_DEPTH_TEST);
+
     QVector<Point> base, header;
 #define ANGLE(x) 2 * M_PI * (x) / n
 #define POINT(x, r, z) { \
